@@ -1,0 +1,21 @@
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade {
+  animation: fadeOut 4s 3.5s ease; /* 0.5초 동안 나타나고, 4초 뒤에 3.5초 동안 사라지도록 설정 */
+}
