@@ -1,11 +1,20 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import MenuCategory from '../components/MenuCategory'
+import TotalProductPage from './TotalProductPage'
+import Header from './Header'
 
 function Layout() {
+  const categories = [
+    {
+      category: "모두",
+      page: <TotalProductPage />
+    }
+  ]
+
   return (
-    <div>
-      {/* A "layout route" is a good place to put markup you want to
-          share across all the pages on your site, like navigation. */}
+    <div className='w-4/5 m-auto'>
+      <Header />
       <nav>
         <ul>
           <li>
@@ -16,12 +25,11 @@ function Layout() {
           </li>
         </ul>
       </nav>
-
-      <hr />
-
-      {/* An <Outlet> renders whatever child route is currently active,
-          so you can think about this <Outlet> as a placeholder for
-          the child routes we defined above. */}
+      {categories.map((item) => (
+        <Link to="/">
+          <MenuCategory category={item.category} />
+        </Link>
+      ))}
       <Outlet />
     </div>
   )
