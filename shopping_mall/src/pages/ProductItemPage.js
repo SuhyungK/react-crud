@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ProductItem from '../components/ProductItem'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 function ProductItemPage() {
   const productListByCategory = useSelector((state) => state.products.listByCategory)
   const param = useParams()
-  // const catergoryName = window.location.pathname.split('/').pop()
   const [ productList, setProductList ] = useState([])
   
   const getObjectByCategory = () =>{
@@ -18,12 +17,14 @@ function ProductItemPage() {
   }, [productListByCategory, param.categoryName])
 
   return (
-    <div className='grid grid-cols-3'>
+    <div className='grid grid-cols-4 gap-4'>
       {productList && productList.map((product, index) => (
         <div key={index} className='col-span-1'>
-          <ProductItem 
-            product={product}
-          />
+          <Link to={"/item/" + product.id}>
+            <ProductItem 
+              product={product}
+            />
+          </Link>
         </div> 
       ))}
     </div>

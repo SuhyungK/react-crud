@@ -1,6 +1,5 @@
 import React from 'react'
 import MenuCategory from './MenuCategory'
-import Test2 from '../pages/Test2'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -9,7 +8,7 @@ function ProductNavBar() {
 
   return (
     <nav className='flex justify-center'>
-      <Link to="/">
+      <Link to="/category">
         <MenuCategory
           category="모두"
         />
