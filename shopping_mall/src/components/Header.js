@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaShoppingCart } from "react-icons/fa";
 
 function Header() {
   return (
@@ -10,7 +11,7 @@ function Header() {
       <nav>
         <ul className='flex'>
           <li>
-            카트
+            <FaShoppingCart />
           </li>
           <li>
             마이 페이지

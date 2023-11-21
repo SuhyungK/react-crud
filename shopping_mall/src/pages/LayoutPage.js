@@ -2,7 +2,8 @@ import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import MenuCategory from '../components/MenuCategory'
 import TotalProductPage from './TotalProductPage'
-import Header from './Header'
+import Header from '../components/Header'
+import ProductPage from './ProductPage'
 
 function Layout() {
   const categories = [
@@ -15,7 +16,8 @@ function Layout() {
   return (
     <div className='w-4/5 m-auto'>
       <Header />
-      <nav>
+      <ProductPage />
+      {/* <nav>
         <ul>
           <li>
             <Link to="/">Test</Link>
@@ -30,7 +32,7 @@ function Layout() {
           <MenuCategory category={item.category} />
         </Link>
       ))}
-      <Outlet />
+      <Outlet /> */}
     </div>
   )
 }
