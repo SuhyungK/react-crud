@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUser, FaSignOutAlt } from "react-icons/fa";
 
 function Header() {
   return (
@@ -14,10 +14,10 @@ function Header() {
             <FaShoppingCart />
           </li>
           <li>
-            마이 페이지
+            <FaUser />
           </li>
           <li>
-            로그인/로그아웃
+            <FaSignOutAlt />
           </li>
         </ul>
       </nav>
